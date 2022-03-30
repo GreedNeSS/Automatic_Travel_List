@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Automatic_Sheet_DAL\Automatic_Sheet_DAL.csproj" />
+  </ItemGroup>
+
 </Project>
