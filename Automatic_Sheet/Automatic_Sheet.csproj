@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Automatic_Sheet_BL\Automatic_Sheet_BL.csproj" />
+  </ItemGroup>
+
 </Project>
