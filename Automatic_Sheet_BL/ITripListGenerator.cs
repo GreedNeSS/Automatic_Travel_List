@@ -9,7 +9,6 @@ namespace Automatic_Sheet_BL
 {
     public interface ITripListGenerator
     {
-        void GetTicketPrice(int ticketPrice);
         TripEntity GetTrip(int vehicleCount);
         List<TripEntity> GetTripList(int rowCount, int ticketCount);
         string GetTripsString(List<TripEntity> trips);
