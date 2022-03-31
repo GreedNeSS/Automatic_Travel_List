@@ -39,7 +39,7 @@ namespace Automatic_Sheet_BL
                 throw new Exception("Слишком много билетов для такого количества строк!");
             }
 
-            if (ticketCount % 2 == 0)
+            if (ticketCount % 2 != 0)
             {
                 throw new Exception("Количество биллетов должно быть чётным!");
             }
@@ -52,7 +52,7 @@ namespace Automatic_Sheet_BL
             int usedTicketCount = 0;
             Random random = new Random();
 
-            while (rowCount <= usedTicketCount)
+            while (rowCount >= usedTicketCount)
             {
                 tripEntities.Add(GetTrip(1, repository));
                 usedTicketCount += 2;
@@ -62,7 +62,7 @@ namespace Automatic_Sheet_BL
             {
                 while (true)
                 {
-                    int i = random.Next(rowCount);
+                    int i = random.Next(tripEntities.Count);
                     if (tripEntities[i].VehicleCount == 1)
                     {
                         tripEntities[i] = GetTrip(2, repository);
