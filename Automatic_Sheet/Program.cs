@@ -111,5 +111,6 @@ catch (Exception ex)
     Console.ForegroundColor = ConsoleColor.Red;
     Console.WriteLine("\n" + ex.Message);
     Console.ResetColor();
+    Console.ReadLine();
     return;
 }
