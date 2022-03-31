@@ -16,7 +16,15 @@ namespace Automatic_Sheet_BL
 
         public string GetTripsString(List<TripEntity> trips)
         {
-            return string.Join("\n", trips);
+            string tripsString = string.Empty;
+
+            foreach (TripEntity trip in trips)
+            {
+                tripsString += trip.TravelToDestination + "\n";
+                tripsString += trip.TravelToBack + "\n";
+            }
+
+            return tripsString;
         }
 
         private void ValidateInitData(int rowCount, int ticketCount)
