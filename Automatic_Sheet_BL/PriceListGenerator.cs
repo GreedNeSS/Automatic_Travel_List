@@ -15,7 +15,8 @@ namespace Automatic_Sheet_BL
 
             tripList.ForEach(trip =>
             {
-                priceListString += (ticketPrice * trip.VehicleCount).ToString();
+                priceListString += (ticketPrice * trip.VehicleCount).ToString() + "\n";
+                priceListString += (ticketPrice * trip.VehicleCount).ToString() + "\n";
             });
 
             return priceListString;

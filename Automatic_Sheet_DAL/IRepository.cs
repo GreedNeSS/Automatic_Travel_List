@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Automatic_Sheet_DAL
 {
-    internal interface IRepository
+    public interface IRepository
     {
         TripEntity GetRandomUniqTrip(int vehicleCount);
     }
