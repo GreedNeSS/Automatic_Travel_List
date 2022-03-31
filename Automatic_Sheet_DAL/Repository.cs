@@ -42,7 +42,7 @@ namespace Automatic_Sheet_DAL
             {
                 if (TransferTrips.Count == 0)
                 {
-                    Init(2);
+                    Reboot(2);
                 }
 
                 int i = random.Next(TransferTrips.Count);
@@ -54,7 +54,7 @@ namespace Automatic_Sheet_DAL
             {
                 if (NonStopTrips.Count == 0)
                 {
-                    Init(1);
+                    Reboot(1);
                 }
 
                 int i = random.Next(NonStopTrips.Count);
@@ -66,7 +66,7 @@ namespace Automatic_Sheet_DAL
             return randomTrip;
         }
 
-        public void Init(int vehicleCount)
+        private void Reboot(int vehicleCount)
         {
             switch (vehicleCount)
             {
