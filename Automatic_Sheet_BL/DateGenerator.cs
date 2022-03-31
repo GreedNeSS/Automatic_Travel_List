@@ -20,7 +20,8 @@ namespace Automatic_Sheet_BL
         {
             int year = DateTime.Today.Year;
             DateTime date = new DateTime(year, month, 1);
-            
+            DateValidation(month, vacation);
+
             if (vacation is null)
             {
                 Init(date);
@@ -84,6 +85,28 @@ namespace Automatic_Sheet_BL
         {
             travelDateList.Sort();
             return String.Join("\n", travelDateList.ToArray());
+        }
+
+        public void DateValidation(int month, int[]? vacation = null)
+        {
+            if (month > 12 || month < 1)
+            {
+                throw new Exception("Неправильно введен месяц!");
+            }
+
+            if (vacation != null)
+            {
+                int year = DateTime.Today.Year;
+                int days = DateTime.DaysInMonth(year, month);
+
+                foreach (int numb in vacation)
+                {
+                    if (numb > days || numb < 1)
+                    {
+                        throw new Exception("Неправильно введены числа нерабочих дней!");
+                    }
+                }
+            }
         }
     }
 }
