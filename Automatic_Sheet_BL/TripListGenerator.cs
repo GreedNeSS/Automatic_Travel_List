@@ -66,5 +66,11 @@ namespace Automatic_Sheet_BL
 
             return tripEntities;
         }
+
+        public IRepository GetRepository()
+        {
+            IRepository repository = new Repository();
+            return repository;
+        }
     }
 }

@@ -11,5 +11,6 @@ namespace Automatic_Sheet_BL
     {
         List<TripEntity> GetTripList(int rowCount, int ticketCount, IRepository repository);
         string GetTripsString(List<TripEntity> trips);
+        IRepository GetRepository();
     }
 }
