@@ -8,9 +8,8 @@ namespace Automatic_Sheet_BL
 {
     public interface IDateGenerator
     {
-        DateTime GetWeekday();
         List<string> CreateTravelDates(DateTime date);
-        List<string> CreateTravelList(int rowCount, DateTime date);
+        List<string> CreateTravelList(int rowCount);
         string GetDateListString(List<string> travelDateList);
     }
 }
