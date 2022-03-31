@@ -11,6 +11,6 @@ namespace Automatic_Sheet_BL
         List<string> CreateTravelDates(DateTime date);
         List<string> CreateTravelList(int rowCount);
         string GetDateListString(List<string> travelDateList);
-        void DateValidation(int month, int[]? vacation = null);
+        void DateValidation(int month, List<int>? vacation = null);
     }
 }

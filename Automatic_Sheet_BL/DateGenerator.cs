@@ -11,12 +11,7 @@ namespace Automatic_Sheet_BL
         public List<DateTime> Dates { get; set; } = new List<DateTime>();
         public List<DateTime> UsedDates { get; set; } = new List<DateTime>();
 
-        public DateGenerator()
-        {
-            Init(DateTime.Today);
-        }
-
-        public DateGenerator(int month, int[]? vacation = null)
+        public DateGenerator(int month, List<int>? vacation = null)
         {
             int year = DateTime.Today.Year;
             DateTime date = new DateTime(year, month, 1);
@@ -30,7 +25,7 @@ namespace Automatic_Sheet_BL
             Init(date, vacation);
         }
 
-        private void Init(DateTime initDate, int[]? vacation = null)
+        private void Init(DateTime initDate, List<int>? vacation = null)
         {
             int year = initDate.Year;
             int month = initDate.Month;
@@ -87,7 +82,7 @@ namespace Automatic_Sheet_BL
             return String.Join("\n", travelDateList.ToArray());
         }
 
-        public void DateValidation(int month, int[]? vacation = null)
+        public void DateValidation(int month, List<int>? vacation = null)
         {
             if (month > 12 || month < 1)
             {
