@@ -52,7 +52,7 @@ namespace Automatic_Sheet_BL
             int usedTicketCount = 0;
             Random random = new Random();
 
-            while (rowCount >= usedTicketCount)
+            while (rowCount > usedTicketCount)
             {
                 tripEntities.Add(GetTrip(1, repository));
                 usedTicketCount += 2;
