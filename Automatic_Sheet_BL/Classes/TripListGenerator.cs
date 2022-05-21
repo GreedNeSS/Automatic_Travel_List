@@ -27,6 +27,19 @@ namespace Automatic_Sheet_BL
             return tripsString;
         }
 
+        public List<string> GetTripStringList(List<TripEntity> trips)
+        {
+            List<string> tripList = new List<string>();
+
+            foreach (TripEntity trip in trips)
+            {
+                tripList.Add(trip.TravelToDestination + "\n");
+                tripList.Add(trip.TravelToBack + "\n");
+            }
+
+            return tripList;
+        }
+
         private void ValidateInitData(int rowCount, int ticketCount)
         {
             if (ticketCount < rowCount)
