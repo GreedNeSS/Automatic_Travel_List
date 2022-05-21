@@ -9,6 +9,7 @@ namespace Automatic_Sheet_BL
 {
     public interface IPriceListGenerator
     {
-        string GetPriceList(List<TripEntity> priceList, int ticketPrice);
+        string GetPriceListString(List<TripEntity> priceList, int ticketPrice);
+        List<string> GetPriceList(List<TripEntity> priceList, int ticketPrice);
     }
 }

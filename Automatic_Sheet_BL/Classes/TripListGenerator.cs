@@ -33,8 +33,8 @@ namespace Automatic_Sheet_BL
 
             foreach (TripEntity trip in trips)
             {
-                tripList.Add(trip.TravelToDestination + "\n");
-                tripList.Add(trip.TravelToBack + "\n");
+                tripList.Add(trip.TravelToDestination);
+                tripList.Add(trip.TravelToBack);
             }
 
             return tripList;

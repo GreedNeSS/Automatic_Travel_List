@@ -10,7 +10,7 @@ namespace Automatic_Sheet_BL
     {
         public void SerializeToFile(string data)
         {
-            using (FileStream fs = new FileStream("Данные ведомости.txt", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream("Данные ведомости.csv", FileMode.OpenOrCreate))
             {
                 byte[] buffer = Encoding.Default.GetBytes(data);
                 fs.Write(buffer, 0, buffer.Length);

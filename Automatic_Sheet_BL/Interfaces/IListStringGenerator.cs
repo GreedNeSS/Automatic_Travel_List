@@ -2,6 +2,7 @@
 {
     public interface IListStringGenerator
     {
-        string CreateDataStringList(List<string> strings);
+        string CreateString(List<string> strings);
+        string CreateTable(List<string> row1, List<string> row2, List<string> row3);
     }
 }

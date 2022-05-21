@@ -10,6 +10,7 @@ namespace Automatic_Sheet_BL
     public interface ITripListGenerator
     {
         List<TripEntity> GetTripList(int rowCount, int ticketCount, IRepository repository);
+        List<string> GetTripStringList(List<TripEntity> trips);
         string GetTripsString(List<TripEntity> trips);
         IRepository GetRepository();
     }

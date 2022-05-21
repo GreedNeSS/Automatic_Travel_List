@@ -9,7 +9,7 @@ namespace Automatic_Sheet_BL
 {
     public class PriceListGenerator : IPriceListGenerator
     {
-        public string GetPriceList(List<TripEntity> tripList, int ticketPrice)
+        public string GetPriceListString(List<TripEntity> tripList, int ticketPrice)
         {
             string priceListString = string.Empty;
 
@@ -20,6 +20,18 @@ namespace Automatic_Sheet_BL
             });
 
             return priceListString;
+        }
+        public List<string> GetPriceList(List<TripEntity> tripList, int ticketPrice)
+        {
+            List<string> priceList = new List<string>();
+
+            tripList.ForEach(trip =>
+            {
+                priceList.Add((ticketPrice * trip.VehicleCount).ToString());
+                priceList.Add((ticketPrice * trip.VehicleCount).ToString());
+            });
+
+            return priceList;
         }
     }
 }

@@ -73,12 +73,12 @@ namespace Automatic_Sheet_BL
                 Dates.Remove(day);
             }
 
+            travelList.Sort();
             return travelList;
         }
 
         public string GetDateListString(List<string> travelDateList)
         {
-            travelDateList.Sort();
             return String.Join("\n", travelDateList.ToArray());
         }
 

@@ -85,24 +85,23 @@ try
 {
     IDateGenerator dateGenerator = new DateGenerator(month, vacation);
     List<string> dateListStrings = dateGenerator.CreateTravelList(rowCount);
-    string datelistString = dateGenerator.GetDateListString(dateListStrings);
 
     ITripListGenerator tripListGenerator = new TripListGenerator();
     var repository = tripListGenerator.GetRepository();
     var tripList = tripListGenerator.GetTripList(rowCount, ticketCount, repository);
-    string tripListString = tripListGenerator.GetTripsString(tripList);
+    List<string> tripStringList = tripListGenerator.GetTripStringList(tripList);
 
     IPriceListGenerator priceListGenerator = new PriceListGenerator();
-    string priceListString = priceListGenerator.GetPriceList(tripList, ticketPrice);
+    List<string> priiceList = priceListGenerator.GetPriceList(tripList, ticketPrice);
 
     IListStringGenerator listStringGenerator = new ListStringGenerator();
-    string result = listStringGenerator.CreateDataStringList(new List<string> { datelistString, tripListString, priceListString });
+    string table = listStringGenerator.CreateTable(dateListStrings, tripStringList, priiceList);
 
     ISerializerToFile serializer = new SerializerToFile();
-    serializer.SerializeToFile(result);
+    serializer.SerializeToFile(table);
 
     Console.ForegroundColor = ConsoleColor.Green;
-    Console.WriteLine("\nДанные записаны в файл: \"Данные ведомости.txt\" в каталоге программы");
+    Console.WriteLine("\nДанные записаны в файл: \"Данные ведомости.csv\" в каталоге программы");
     Console.ResetColor();
     Console.ReadLine();
 }
