@@ -12,7 +12,7 @@ List<int>? vacation = new List<int>();
 
 do
 {
-    Console.WriteLine("\nВведите необходимое количество строк для ведомости: ");
+    Console.WriteLine("\nВведите необходимое количество чётных строк для ведомости: ");
 
     answer = Console.ReadLine();
 } while (!int.TryParse(answer, out rowCount));
@@ -20,7 +20,7 @@ do
 
 do
 {
-    Console.WriteLine("\nВведите количество биллетов: ");
+    Console.WriteLine("\nВведите чётное количество биллетов: ");
 
     answer = Console.ReadLine();
 } while (!int.TryParse(answer, out ticketCount));
